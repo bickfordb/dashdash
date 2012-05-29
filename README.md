@@ -4,9 +4,9 @@ dashdash
 dashdash is a Clojure option parsing library designed to make option declaration easy.  
 
 Instead of declaring all of the programs options in one executable, options may be declared in the modules they affect.  Each "defopt" call defines an atom with the same symbol name in the module.  During option processing the atoms are filled in with the parsed options from the command line.  Options are automatically prefixed with the namespace name.  For example, an option definition like  "(defopt baz)" in namespace "foo.bar" will create a command line option "--foo-bar-baz" which will fill in the atom at "foo.bar/baz" 
-## Usage
+### Usage
 
-## src/animals/elephant.clj
+#### src/animals/elephant.clj
 
 ```clojure
 (ns animals.elephant
@@ -32,7 +32,7 @@ Instead of declaring all of the programs options in one executable, options may 
     (println "eats peanuts")))
 ```
 
-## src/animals/run.clj
+#### src/animals/run.clj
 
 ```clojure
 (ns animals.run
@@ -50,7 +50,7 @@ Instead of declaring all of the programs options in one executable, options may 
   (rumpus (process-args args)))
 ```
   
-## example invocation
+#### Example invocations
 
 ```bash
 java -jar $myjar animals.run --animals-elephants-verbose --animals-elephants-num=5 arg1 arg2 arg3 
@@ -60,7 +60,7 @@ java -jar $myjar animals.run --animals-elephants-num=5 arg1 arg2 arg3
 # should print "5 thundering elephants"
 ```
 
-## License
+### License
 
 Copyright (C) 2012 Brandon Bickford
 
