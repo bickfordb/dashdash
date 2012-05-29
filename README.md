@@ -57,7 +57,7 @@ java -jar $myjar animals.run --animals-elephants-verbose --animals-elephants-num
 # should print "5 thundering elephants"
 
 java -jar $myjar animals.run --animals-elephants-num=5 arg1 arg2 arg3 
-# should print "5 thundering elephants"
+# should print nothing since @animals.elephants/verbose is 0
 ```
 
 ### License
