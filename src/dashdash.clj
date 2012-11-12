@@ -219,3 +219,13 @@
         (print-usage :error @error)
         (System/exit 1))
       (reset! args @positional))))
+
+(defmacro
+  def-program
+  [program-name-symbol arg-bind & body]
+  `(defn ~(symbol "-main")
+     [& args#]
+     (let [program-name# (name (quote ~program-name-symbol))]
+       (dashdash/run-args args# :program-name program-name#)
+       (let [~arg-bind @dashdash/args]
+         ~@body))))
